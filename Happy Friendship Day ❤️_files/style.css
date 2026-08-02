@@ -1,0 +1,1844 @@
+/*==================================================
+        FRIENDSHIP DAY WEBSITE - STYLE.CSS (PART 1A)
+===================================================*/
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Pacifico&display=swap');
+
+/*========================
+        RESET
+=========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+html{
+    overflow-x:hidden;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ffd6e7,#ffeef6,#fff8fb);
+    color:#333;
+    overflow-x:hidden;
+    line-height:1.7;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#ffe6ef;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ff4d8d;
+    border-radius:30px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#ff2d75;
+}
+
+/*========================
+        LOADER
+=========================*/
+
+#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:linear-gradient(135deg,#ff5ca8,#ff80bf,#ffd3ea);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    color:#fff;
+    transition:.7s;
+}
+
+#loader h1{
+    font-size:3rem;
+    margin-bottom:15px;
+    font-family:'Pacifico',cursive;
+}
+
+#loader p{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.loader-heart{
+    width:80px;
+    height:80px;
+    background:#fff;
+    position:relative;
+    transform:rotate(45deg);
+    animation:beat 1s infinite;
+}
+
+.loader-heart::before,
+.loader-heart::after{
+    content:"";
+    position:absolute;
+    width:80px;
+    height:80px;
+    background:#fff;
+    border-radius:50%;
+}
+
+.loader-heart::before{
+    left:-40px;
+}
+
+.loader-heart::after{
+    top:-40px;
+}
+
+/*========================
+        NAVBAR
+=========================*/
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    background:rgba(255,255,255,.35);
+    backdrop-filter:blur(15px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    z-index:999;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#ff2f78;
+    font-family:'Pacifico',cursive;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#333;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#ff2d75;
+}
+
+/*========================
+        HERO
+=========================*/
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:130px 8% 80px;
+    gap:60px;
+}
+
+.hero-content{
+    flex:1;
+}
+
+.hero-content h3{
+    color:#ff2d75;
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.hero-content h1{
+    font-size:65px;
+    color:#ff005d;
+    margin-bottom:20px;
+    line-height:1.1;
+}
+
+.hero-content p{
+    font-size:18px;
+    color:#555;
+    margin-bottom:35px;
+}
+
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image img{
+    width:380px;
+    height:500px;
+    object-fit:cover;
+    border-radius:30px;
+    border:8px solid #fff;
+    box-shadow:0 20px 40px rgba(255,0,90,.25);
+    animation:float 4s ease-in-out infinite;
+}
+
+/*========================
+        BUTTONS
+=========================*/
+
+.btn{
+    display:inline-block;
+    padding:15px 40px;
+    background:#ff2d75;
+    color:#fff;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+    transition:.4s;
+    border:none;
+    cursor:pointer;
+}
+
+.btn:hover{
+    transform:translateY(-6px);
+    background:#ff0055;
+    box-shadow:0 15px 30px rgba(255,0,100,.35);
+}
+
+/*========================
+      SECTION TITLES
+=========================*/
+
+.section-title{
+    text-align:center;
+    font-size:46px;
+    color:#ff2d75;
+    margin-bottom:15px;
+    font-family:'Pacifico',cursive;
+}
+
+.section-sub{
+    text-align:center;
+    color:#666;
+    margin-bottom:50px;
+}
+
+/*========================
+        QUOTE
+=========================*/
+
+.quote{
+    width:90%;
+    margin:auto;
+    background:#fff;
+    border-radius:25px;
+    padding:45px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.quote h2{
+    color:#ff2d75;
+    font-size:34px;
+    line-height:1.5;
+}
+
+/*========================
+      FLOAT ANIMATION
+=========================*/
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+/*========================
+      HEART BEAT
+=========================*/
+
+@keyframes beat{
+
+0%{
+transform:rotate(45deg) scale(1);
+}
+
+25%{
+transform:rotate(45deg) scale(1.08);
+}
+
+50%{
+transform:rotate(45deg) scale(1.15);
+}
+
+100%{
+transform:rotate(45deg) scale(1);
+}
+
+}
+/*==================================================
+        FRIENDSHIP DAY WEBSITE - STYLE.CSS (PART 1B)
+        Music • Hearts • Gallery • Slider
+        Counter • Doraemon • Song Section
+===================================================*/
+
+/*========================
+        MUSIC BUTTON
+=========================*/
+
+#musicBtn{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:65px;
+    height:65px;
+    border:none;
+    border-radius:50%;
+    background:#ff2d75;
+    color:#fff;
+    font-size:24px;
+    cursor:pointer;
+    z-index:9999;
+    box-shadow:0 12px 25px rgba(255,45,117,.35);
+    transition:.3s;
+}
+
+#musicBtn:hover{
+    transform:scale(1.12) rotate(15deg);
+    background:#ff005d;
+}
+
+#musicBtn.playing{
+    animation:musicPulse 1.2s infinite;
+}
+
+@keyframes musicPulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.15);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/*========================
+      FLOATING HEARTS
+=========================*/
+
+.hearts{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.hearts span{
+    position:absolute;
+    bottom:-80px;
+    font-size:25px;
+    animation:floatHeart 15s linear infinite;
+    opacity:.8;
+}
+
+.hearts span:nth-child(1){
+left:5%;
+animation-duration:12s;
+font-size:18px;
+}
+
+.hearts span:nth-child(2){
+left:15%;
+animation-duration:15s;
+font-size:28px;
+}
+
+.hearts span:nth-child(3){
+left:25%;
+animation-duration:11s;
+}
+
+.hearts span:nth-child(4){
+left:35%;
+animation-duration:16s;
+font-size:35px;
+}
+
+.hearts span:nth-child(5){
+left:48%;
+animation-duration:13s;
+}
+
+.hearts span:nth-child(6){
+left:60%;
+animation-duration:17s;
+font-size:22px;
+}
+
+.hearts span:nth-child(7){
+left:73%;
+animation-duration:14s;
+}
+
+.hearts span:nth-child(8){
+left:82%;
+animation-duration:18s;
+font-size:30px;
+}
+
+.hearts span:nth-child(9){
+left:90%;
+animation-duration:12s;
+}
+
+.hearts span:nth-child(10){
+left:97%;
+animation-duration:20s;
+font-size:20px;
+}
+
+@keyframes floatHeart{
+
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+/*========================
+        GALLERY
+=========================*/
+
+#gallery{
+    padding:90px 8%;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.photo{
+    position:relative;
+    overflow:hidden;
+    border-radius:25px;
+    box-shadow:0 15px 30px rgba(0,0,0,.12);
+    cursor:pointer;
+}
+
+.photo img{
+    width:100%;
+    height:360px;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.photo:hover img{
+    transform:scale(1.1);
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(255,45,117,.65);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    transition:.4s;
+}
+
+.overlay h3{
+    color:#fff;
+    font-size:28px;
+    text-align:center;
+}
+
+.photo:hover .overlay{
+    opacity:1;
+}
+
+/*========================
+      MEMORY SLIDER
+=========================*/
+
+.slider-section{
+    padding:90px 8%;
+}
+
+.slider{
+    width:100%;
+    max-width:1000px;
+    height:500px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:30px;
+    box-shadow:0 20px 35px rgba(0,0,0,.15);
+}
+
+.slides{
+    display:flex;
+    width:400%;
+    animation:slideShow 16s infinite;
+}
+
+.slides img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+}
+
+@keyframes slideShow{
+
+0%,20%{
+transform:translateX(0%);
+}
+
+25%,45%{
+transform:translateX(-100%);
+}
+
+50%,70%{
+transform:translateX(-200%);
+}
+
+75%,95%{
+transform:translateX(-300%);
+}
+
+100%{
+transform:translateX(0%);
+}
+
+}
+
+/*========================
+      FRIENDSHIP COUNTER
+=========================*/
+
+.counter{
+    padding:90px 8%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.counter-box{
+    background:#fff;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.counter-box:hover{
+    transform:translateY(-10px);
+}
+
+.counter-box h1{
+    color:#ff2d75;
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.counter-box p{
+    font-size:18px;
+    color:#666;
+}
+
+/*========================
+      DORAEMON SECTION
+=========================*/
+
+.doraemon{
+    padding:100px 8%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+.doraemon .left img{
+    width:320px;
+    animation:float 4s ease-in-out infinite;
+}
+
+.doraemon .right{
+    max-width:600px;
+}
+
+.doraemon h1{
+    color:#0099ff;
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.doraemon h2{
+    font-size:34px;
+    color:#0066cc;
+    margin-bottom:20px;
+}
+
+.doraemon p{
+    font-size:19px;
+    color:#555;
+}
+
+/*========================
+      FAVORITE SONG
+=========================*/
+
+.song{
+    padding:100px 8%;
+    text-align:center;
+}
+
+.song h1{
+    font-size:48px;
+    color:#ff2d75;
+    margin-bottom:15px;
+    font-family:'Pacifico',cursive;
+}
+
+.song h2{
+    font-size:36px;
+    color:#444;
+    margin-bottom:20px;
+}
+
+.song p{
+    max-width:750px;
+    margin:auto;
+    font-size:19px;
+    color:#666;
+    margin-bottom:35px;
+}
+
+/*========================
+      HOVER EFFECTS
+=========================*/
+
+img{
+    transition:.4s;
+}
+
+img:hover{
+    transform:scale(1.03);
+}
+/*==================================================
+        FRIENDSHIP DAY WEBSITE - STYLE.CSS (PART 2A)
+        Letter • Favorites • Favorite Cards
+===================================================*/
+
+/*========================
+      FRIENDSHIP LETTER
+=========================*/
+
+.letter-section{
+    padding:100px 8%;
+    background:linear-gradient(135deg,#fff5fb,#ffe4f2);
+}
+
+.letter-box{
+    max-width:900px;
+    margin:40px auto;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(12px);
+    padding:50px;
+    border-radius:30px;
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+    border:2px solid rgba(255,255,255,.5);
+    transition:.4s;
+}
+
+.letter-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 45px rgba(255,45,117,.18);
+}
+
+.letter-box p{
+    font-size:20px;
+    line-height:2;
+    color:#555;
+    text-align:justify;
+}
+
+.letter-box span{
+    color:#ff2d75;
+    font-size:24px;
+    font-weight:700;
+}
+
+/*========================
+      FAVORITES SECTION
+=========================*/
+
+.favorites{
+    padding:100px 8%;
+}
+
+.favorite-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-top:50px;
+}
+
+/*========================
+      FAVORITE CARD
+=========================*/
+
+.favorite-card{
+    background:#fff;
+    border-radius:25px;
+    padding:35px 25px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.35s;
+    position:relative;
+    overflow:hidden;
+}
+
+.favorite-card::before{
+    content:"";
+    position:absolute;
+    width:180%;
+    height:180%;
+    background:linear-gradient(45deg,#ffb3d9,#ffd6ea,#ffffff);
+    top:-150%;
+    left:-150%;
+    transform:rotate(45deg);
+    transition:.6s;
+    z-index:0;
+}
+
+.favorite-card:hover::before{
+    top:-40%;
+    left:-40%;
+}
+
+.favorite-card>*{
+    position:relative;
+    z-index:2;
+}
+
+.favorite-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(255,45,117,.20);
+}
+
+.favorite-card img{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    margin-bottom:20px;
+}
+
+.favorite-card i{
+    font-size:70px;
+    color:#ff2d75;
+    margin-bottom:20px;
+}
+
+.favorite-card h2{
+    color:#ff2d75;
+    font-size:24px;
+    margin-bottom:12px;
+}
+
+.favorite-card p{
+    color:#555;
+    font-size:18px;
+    font-weight:500;
+}
+
+/*========================
+      CARD ANIMATION
+=========================*/
+
+.favorite-card{
+    animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+
+0%{
+    opacity:0;
+    transform:translateY(40px);
+}
+
+100%{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
+/*========================
+      GLASS EFFECT
+=========================*/
+
+.glass{
+    background:rgba(255,255,255,.25);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.3);
+}
+
+/*========================
+      SMALL DECORATION
+=========================*/
+
+.favorite-card::after{
+    content:"❤️";
+    position:absolute;
+    top:15px;
+    right:18px;
+    font-size:22px;
+    opacity:.25;
+}
+
+/*========================
+      RESPONSIVE
+=========================*/
+
+@media(max-width:992px){
+
+.letter-box{
+    padding:35px;
+}
+
+.letter-box p{
+    font-size:18px;
+}
+
+.favorite-container{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.favorite-container{
+    grid-template-columns:1fr;
+}
+
+.letter-box{
+    padding:25px;
+}
+
+.letter-box p{
+    font-size:17px;
+    line-height:1.8;
+}
+
+.favorite-card img{
+    width:100px;
+    height:100px;
+}
+
+.favorite-card h2{
+    font-size:22px;
+}
+
+}
+
+@media(max-width:480px){
+
+.letter-section,
+.favorites{
+    padding:70px 20px;
+}
+
+.letter-box span{
+    font-size:20px;
+}
+
+.favorite-card{
+    padding:25px 20px;
+}
+
+.favorite-card i{
+    font-size:55px;
+}
+
+}
+/*==================================================
+        FRIENDSHIP DAY WEBSITE - STYLE.CSS (PART 2B)
+        Friendship Cards Collection
+===================================================*/
+
+/*========================
+      FRIENDSHIP CARDS
+=========================*/
+
+#cards{
+    padding:100px 8%;
+    background:linear-gradient(135deg,#fff0f7,#ffe2f0,#fff7fb);
+}
+
+.cards-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+    margin-top:60px;
+}
+
+/*========================
+      CARD DESIGN
+=========================*/
+
+.friend-card{
+    position:relative;
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(12px);
+    border-radius:25px;
+    padding:30px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.35s;
+    border:2px solid rgba(255,255,255,.5);
+}
+
+.friend-card:hover{
+    transform:translateY(-12px) scale(1.02);
+    box-shadow:0 25px 45px rgba(255,45,117,.20);
+}
+
+.friend-card::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:rgba(255,45,117,.08);
+    border-radius:50%;
+    top:-70px;
+    right:-70px;
+}
+
+.friend-card::after{
+    content:"💖";
+    position:absolute;
+    bottom:18px;
+    right:18px;
+    font-size:24px;
+    opacity:.18;
+}
+
+/*========================
+      HEADINGS
+=========================*/
+
+.friend-card h2{
+    color:#ff2d75;
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.friend-card h3{
+    color:#ff4b8f;
+    margin:15px 0;
+}
+
+.friend-card hr{
+    border:none;
+    height:2px;
+    background:#ffd0e4;
+    margin:18px 0;
+}
+
+/*========================
+      TEXT
+=========================*/
+
+.friend-card p{
+    font-size:17px;
+    color:#555;
+    margin:10px 0;
+    line-height:1.7;
+}
+
+.friend-card b{
+    color:#ff2d75;
+}
+
+/*========================
+      LISTS
+=========================*/
+
+.friend-card ul{
+    list-style:none;
+    margin-top:12px;
+}
+
+.friend-card ul li{
+    padding:8px 0;
+    color:#444;
+    border-bottom:1px dashed #ffd7e8;
+}
+
+.friend-card ul li:last-child{
+    border:none;
+}
+
+/*========================
+      ID PHOTO
+=========================*/
+
+.id-photo{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:15px;
+    border:4px solid #ff7ab3;
+    display:block;
+    margin:15px auto;
+}
+
+/*========================
+      BUTTON
+=========================*/
+
+.card-btn{
+    margin-top:20px;
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:40px;
+    background:#ff2d75;
+    color:#fff;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card-btn:hover{
+    background:#ff005d;
+    transform:scale(1.05);
+}
+
+/*========================
+      SPECIAL CARD COLORS
+=========================*/
+
+.friend-card:nth-child(2){
+    border-top:6px solid gold;
+}
+
+.friend-card:nth-child(3){
+    border-top:6px solid #00bfff;
+}
+
+.friend-card:nth-child(4){
+    border-top:6px solid #28a745;
+}
+
+.friend-card:nth-child(5){
+    border-top:6px solid orange;
+}
+
+.friend-card:nth-child(6){
+    border-top:6px solid crimson;
+}
+
+.friend-card:nth-child(7){
+    border-top:6px solid purple;
+}
+
+.friend-card:nth-child(8){
+    border-top:6px solid #0077ff;
+}
+
+.friend-card:nth-child(9){
+    border-top:6px solid #ff4081;
+}
+
+/*========================
+      ANIMATION
+=========================*/
+
+.friend-card{
+    animation:cardFade .8s ease;
+}
+
+@keyframes cardFade{
+
+0%{
+    opacity:0;
+    transform:translateY(40px);
+}
+
+100%{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
+/*========================
+      HOVER ICON
+=========================*/
+
+.friend-card:hover::after{
+    opacity:1;
+    animation:heartBeat .8s infinite;
+}
+
+@keyframes heartBeat{
+
+0%{
+    transform:scale(1);
+}
+
+50%{
+    transform:scale(1.25);
+}
+
+100%{
+    transform:scale(1);
+}
+
+}
+
+/*========================
+      RESPONSIVE
+=========================*/
+
+@media(max-width:992px){
+
+.cards-container{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.cards-container{
+    grid-template-columns:1fr;
+}
+
+.friend-card{
+    padding:25px;
+}
+
+.friend-card h2{
+    font-size:24px;
+}
+
+.friend-card p{
+    font-size:16px;
+}
+
+.id-photo{
+    width:100px;
+    height:100px;
+}
+
+}
+
+@media(max-width:480px){
+
+#cards{
+    padding:70px 20px;
+}
+
+.friend-card{
+    padding:22px;
+}
+
+.friend-card h2{
+    font-size:22px;
+}
+
+.friend-card h3{
+    font-size:20px;
+}
+
+.card-btn{
+    font-size:15px;
+    padding:12px;
+}
+
+}
+/*==================================================
+        FRIENDSHIP DAY WEBSITE - STYLE.CSS (PART 3A)
+        Timeline + Polaroid Gallery
+===================================================*/
+
+/*==========================
+        TIMELINE
+==========================*/
+
+.timeline-section{
+    padding:100px 8%;
+    background:linear-gradient(135deg,#fff8fc,#ffe8f3);
+    position:relative;
+}
+
+.timeline{
+    position:relative;
+    max-width:1100px;
+    margin:60px auto;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    width:6px;
+    height:100%;
+    transform:translateX(-50%);
+    background:#ff4f8f;
+    border-radius:20px;
+}
+
+/* Timeline Item */
+
+.timeline-item{
+    width:50%;
+    padding:20px 45px;
+    position:relative;
+}
+
+.timeline-item.left{
+    left:0;
+}
+
+.timeline-item.right{
+    left:50%;
+}
+
+.timeline-item::before{
+    content:"❤";
+    position:absolute;
+    top:40px;
+    width:45px;
+    height:45px;
+    background:#ff2d75;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+    font-weight:bold;
+    z-index:5;
+    box-shadow:0 10px 20px rgba(255,0,90,.25);
+}
+
+.timeline-item.left::before{
+    right:-23px;
+}
+
+.timeline-item.right::before{
+    left:-23px;
+}
+
+/* Timeline Card */
+
+.timeline-content{
+    background:#fff;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.35s;
+    position:relative;
+}
+
+.timeline-content:hover{
+    transform:translateY(-8px);
+    box-shadow:0 25px 45px rgba(255,45,117,.18);
+}
+
+.timeline-content h2{
+    color:#ff2d75;
+    margin-bottom:12px;
+    font-size:28px;
+}
+
+.timeline-content p{
+    color:#555;
+    line-height:1.8;
+    font-size:17px;
+}
+
+/*==========================
+        POLAROID
+==========================*/
+
+.polaroid-section{
+    padding:100px 8%;
+}
+
+.polaroid-gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:40px;
+    margin-top:60px;
+}
+
+.polaroid{
+    background:#fff;
+    padding:18px;
+    border-radius:10px;
+    box-shadow:0 15px 30px rgba(0,0,0,.12);
+    text-align:center;
+    transform:rotate(-2deg);
+    transition:.35s;
+}
+
+.polaroid:nth-child(even){
+    transform:rotate(2deg);
+}
+
+.polaroid:hover{
+    transform:rotate(0deg) scale(1.06);
+}
+
+.polaroid img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:6px;
+}
+
+.polaroid p{
+    margin-top:18px;
+    font-size:18px;
+    font-weight:600;
+    color:#ff2d75;
+}
+
+/*==========================
+        ANIMATIONS
+==========================*/
+
+.timeline-item{
+    animation:fadeTimeline .8s ease;
+}
+
+@keyframes fadeTimeline{
+
+0%{
+    opacity:0;
+    transform:translateY(50px);
+}
+
+100%{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
+.polaroid{
+    animation:zoomCard .7s ease;
+}
+
+@keyframes zoomCard{
+
+0%{
+    opacity:0;
+    transform:scale(.8);
+}
+
+100%{
+    opacity:1;
+    transform:scale(1);
+}
+
+}
+
+/*==========================
+        RESPONSIVE
+==========================*/
+
+@media(max-width:900px){
+
+.timeline::before{
+    left:25px;
+}
+
+.timeline-item{
+    width:100%;
+    left:0 !important;
+    padding-left:70px;
+    padding-right:15px;
+    margin-bottom:40px;
+}
+
+.timeline-item::before{
+    left:2px;
+}
+
+}
+
+@media(max-width:768px){
+
+.timeline-content{
+    padding:22px;
+}
+
+.timeline-content h2{
+    font-size:24px;
+}
+
+.timeline-content p{
+    font-size:16px;
+}
+
+.polaroid-gallery{
+    grid-template-columns:1fr;
+}
+
+.polaroid img{
+    height:260px;
+}
+
+}
+
+@media(max-width:480px){
+
+.timeline-section,
+.polaroid-section{
+    padding:70px 20px;
+}
+
+.timeline-content{
+    padding:18px;
+}
+
+.timeline-content h2{
+    font-size:22px;
+}
+
+.polaroid img{
+    height:230px;
+}
+
+}
+/*==================================================
+      FRIENDSHIP DAY WEBSITE - STYLE.CSS (PART 3B)
+      Quotes • Reasons • Ending • Popup • Footer
+===================================================*/
+
+/*=========================
+        QUOTES
+=========================*/
+
+.quotes-slider{
+    padding:100px 8%;
+    background:linear-gradient(135deg,#fff7fb,#ffe4f2);
+}
+
+.quote-box{
+    max-width:900px;
+    margin:50px auto;
+    background:#fff;
+    padding:50px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.quote-box h2{
+    color:#ff2d75;
+    font-size:32px;
+    line-height:1.6;
+    font-style:italic;
+}
+
+/*=========================
+      WHY SPECIAL
+=========================*/
+
+.reasons{
+    padding:100px 8%;
+}
+
+.reason-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-top:50px;
+}
+
+.reason-card{
+    background:#fff;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+    transition:.35s;
+    font-size:55px;
+}
+
+.reason-card:hover{
+    transform:translateY(-10px);
+}
+
+.reason-card h3{
+    color:#ff2d75;
+    margin:20px 0;
+    font-size:24px;
+}
+
+.reason-card p{
+    color:#555;
+    font-size:17px;
+}
+
+/*=========================
+        ENDING
+=========================*/
+
+.ending{
+    padding:120px 8%;
+    text-align:center;
+    background:linear-gradient(135deg,#ff8fc4,#ff5f9e,#ff2d75);
+}
+
+.ending-box{
+    max-width:900px;
+    margin:auto;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    border-radius:30px;
+    padding:60px;
+    color:#fff;
+}
+
+.ending-box h1{
+    font-size:52px;
+    margin-bottom:20px;
+}
+
+.ending-box h2{
+    margin-bottom:25px;
+}
+
+.ending-box p{
+    font-size:20px;
+    line-height:2;
+}
+
+/*=========================
+        FOOTER
+=========================*/
+
+footer{
+    background:#ff2d75;
+    color:#fff;
+    text-align:center;
+    padding:50px 20px;
+}
+
+footer h2{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+footer span{
+    color:#ffe45e;
+}
+
+footer p{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.footer-icons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
+
+.footer-icons i{
+    font-size:28px;
+    transition:.3s;
+}
+
+.footer-icons i:hover{
+    transform:translateY(-8px) scale(1.2);
+}
+
+/*=========================
+        POPUP
+=========================*/
+
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:rgba(0,0,0,.6);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.popup-content{
+    width:90%;
+    max-width:600px;
+    background:#fff;
+    padding:45px;
+    border-radius:25px;
+    text-align:center;
+    animation:popupScale .4s ease;
+}
+
+.popup-content h1{
+    color:#ff2d75;
+    margin-bottom:20px;
+}
+
+.popup-content p{
+    color:#555;
+    font-size:18px;
+    line-height:1.8;
+}
+
+#closePopup{
+    margin-top:30px;
+    padding:14px 35px;
+    border:none;
+    background:#ff2d75;
+    color:#fff;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:17px;
+}
+
+#closePopup:hover{
+    background:#ff005d;
+}
+
+/*=========================
+        CANVAS
+=========================*/
+
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:9999;
+}
+
+/*=========================
+      ANIMATIONS
+=========================*/
+
+@keyframes popupScale{
+
+0%{
+opacity:0;
+transform:scale(.5);
+}
+
+100%{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+@keyframes fadeIn{
+
+0%{
+opacity:0;
+transform:translateY(40px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.quote-box,
+.reason-card,
+.ending-box{
+    animation:fadeIn .8s ease;
+}
+
+/*=========================
+      RESPONSIVE
+=========================*/
+
+@media(max-width:992px){
+
+.ending-box{
+    padding:45px;
+}
+
+.quote-box{
+    padding:35px;
+}
+
+}
+
+@media(max-width:768px){
+
+.quote-box h2{
+    font-size:25px;
+}
+
+.reason-grid{
+    grid-template-columns:1fr;
+}
+
+.ending-box h1{
+    font-size:38px;
+}
+
+.ending-box p{
+    font-size:18px;
+}
+
+footer h2{
+    font-size:24px;
+}
+
+.popup-content{
+    padding:30px;
+}
+
+}
+
+@media(max-width:480px){
+
+.quotes-slider,
+.reasons,
+.ending{
+    padding:70px 20px;
+}
+
+.quote-box{
+    padding:25px;
+}
+
+.quote-box h2{
+    font-size:21px;
+}
+
+.reason-card{
+    padding:25px;
+    font-size:45px;
+}
+
+.ending-box{
+    padding:25px;
+}
+
+.ending-box h1{
+    font-size:30px;
+}
+
+.ending-box p{
+    font-size:16px;
+}
+
+.footer-icons{
+    gap:15px;
+}
+
+.footer-icons i{
+    font-size:22px;
+}
+
+.popup-content h1{
+    font-size:28px;
+}
+
+.popup-content p{
+    font-size:16px;
+}
+
+}
+
+/*=========================
+      EXTRA EFFECTS
+=========================*/
+
+::selection{
+    background:#ff2d75;
+    color:#fff;
+}
+
+.friend-card,
+.favorite-card,
+.reason-card,
+.polaroid,
+.timeline-content,
+.quote-box{
+    transition:all .35s ease;
+}
+
+.friend-card:hover,
+.favorite-card:hover,
+.reason-card:hover,
+.polaroid:hover,
+.timeline-content:hover,
+.quote-box:hover{
+    box-shadow:0 20px 40px rgba(255,45,117,.25);
+}
